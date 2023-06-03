@@ -43,8 +43,12 @@ require_once("../MainHeader/header.php");?>
 							<tr>
 								<th style="width: 5%;">Nro.Ticket</th>
 								<th style="width: 15%;">Categoria</th>
-								<th class="d-none d-sm-table-cell" style="width: 30%;">Titulo</th>
-								<th class="text-center" style="width: 15%;"></th>
+								<th class="d-none d-sm-table-cell" style="width: 40%;">Titulo</th>
+								<th class="d-none d-sm-table-cell" style="width: 5%;">Estado</th>
+								<th class="d-none d-sm-table-cell" style="width: 15%;">Fecha Creación</th>
+								<th class="d-none d-sm-table-cell" style="width: 10%;">Fecha Asignación</th>
+								<th class="d-none d-sm-table-cell" style="width: 10%;">Soporte</th>
+								<th class="text-center" style="width: 5%;"></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -57,6 +61,7 @@ require_once("../MainHeader/header.php");?>
 	<!-- contenido -->
 
 
+    <?php require_once("modalasignar.php");?> 
     <?php require_once("../MainJs/js.php");?> 
 	<script type="text/javascript" src="consultarticket.js"></script>
 </body>
