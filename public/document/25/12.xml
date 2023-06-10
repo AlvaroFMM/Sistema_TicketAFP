@@ -1,0 +1,59 @@
+<EmpEmployment>
+	<EmpEmployment>
+		<lastModifiedDateTime>2023-05-17T17:09:57.000</lastModifiedDateTime>
+		<personNav>
+			<PerPerson>
+				<personId>3128</personId>
+			</PerPerson>
+		</personNav>
+		<endDate/>
+		<assignmentClass>ST</assignmentClass>
+		<userId>9920</userId>
+		<jobInfoNav>
+			<EmpJob>
+				<jobTitle>ENCARGADO ADMINISTRACION VENTAS</jobTitle>
+				<jobCode>1177</jobCode>
+				<managerId>NO_MANAGER</managerId>
+			</EmpJob>
+		</jobInfoNav>
+		<startDate>2018-11-01T00:00:00.000</startDate>
+	</EmpEmployment>
+	<EmpEmployment>
+		<lastModifiedDateTime>2023-06-04T22:56:45.000</lastModifiedDateTime>
+		<personNav>
+			<PerPerson>
+				<personId>3300</personId>
+			</PerPerson>
+		</personNav>
+		<endDate/>
+		<assignmentClass>ST</assignmentClass>
+		<userId>4658</userId>
+		<jobInfoNav>
+			<EmpJob>
+				<jobTitle>GERENTE GENERAL</jobTitle>
+				<jobCode>1235</jobCode>
+				<managerId>NO_MANAGER</managerId>
+			</EmpJob>
+		</jobInfoNav>
+		<startDate>2017-07-01T00:00:00.000</startDate>
+	</EmpEmployment>
+	<EmpEmployment>
+		<lastModifiedDateTime>2023-06-05T02:10:38.000</lastModifiedDateTime>
+		<personNav>
+			<PerPerson>
+				<personId>1264</personId>
+			</PerPerson>
+		</personNav>
+		<endDate/>
+		<assignmentClass>ST</assignmentClass>
+		<userId>12518-C1</userId>
+		<jobInfoNav>
+			<EmpJob>
+				<jobTitle>DIRECTOR CORPORATIVO</jobTitle>
+				<jobCode>1148</jobCode>
+				<managerId>NO_MANAGER</managerId>
+			</EmpJob>
+		</jobInfoNav>
+		<startDate>2006-03-15T00:00:00.000</startDate>
+	</EmpEmployment>
+</EmpEmployment>

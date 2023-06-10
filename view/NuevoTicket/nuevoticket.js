@@ -38,7 +38,10 @@ function guardaryeditar(e){
     if ($('#tick_descrip').summernote('isEmpty') || $('#tick_titulo').val()==''){
         swal("Advertencia!", "Campos Vacios", "warning");
     }else{
-    
+        var totalfiles = $('#fileElem').val().length;
+        for (var i = 0; i < totalfiles; i++) {
+            formData.append("files[]", $('#fileElem')[0].files[i]);
+        }
     /* Array del form ticket */
     
         /* Utilizando Ajax Guardar Ticket */
@@ -49,6 +52,7 @@ function guardaryeditar(e){
             contentType: false,
             processData: false,
             success: function(data){
+                console.log(data);
                 $('#tick_titulo').val('');
                 $('#tick_descrip').summernote('reset');
                 swal("Correcto!", "Registrado Correctamente", "success");

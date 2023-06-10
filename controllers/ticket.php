@@ -2,13 +2,50 @@
 require_once("../config/conexion.php");
 require_once("../models/Ticket.php");
 require_once("../models/Usuario.php");
+
+require_once("../models/Documento.php");
+$documento = new Documento();
 $usuario = new Usuario();
 $ticket = new Ticket();
 
 switch ($_GET["op"]) {
         /* Guardar y editar, guardar si el campo cat_id esta vacio */
     case "insert":
-        $ticket->insert_ticket($_POST["usu_id"], $_POST["cat_id"], $_POST["tick_titulo"], $_POST["tick_descrip"]);
+        $datos = $ticket->insert_ticket($_POST["usu_id"], $_POST["cat_id"], $_POST["tick_titulo"], $_POST["tick_descrip"]);
+        if (is_array($datos)==true and count($datos)>0){
+            foreach ($datos as $row){
+                $output["tick_id"] = $row["tick_id"];
+
+                /*  Validamos si vienen archivos desde la Vista */
+                if (empty($_FILES['files']['name'])){
+
+                }else{
+                    /* Contar Cantidad de Archivos desde la Vista */
+                    $countfiles = count($_FILES['files']['name']);
+                    /*  Generamos ruta segun el ID del ultimo registro insertado */
+                    $ruta = "../public/document/".$output["tick_id"]."/";
+                    $files_arr = array();
+
+                    /*  Preguntamos si la ruta existe, en caso no exista la creamos */
+                    if (!file_exists($ruta)) {
+                        mkdir($ruta, 0777, true);
+                    }
+
+                    /* Recorremos los archivos, y insertamos tantos detalles como documentos vinieron desde la vista */
+                    for ($index = 0; $index < $countfiles; $index++) {
+                        $doc1 = $_FILES['files']['tmp_name'][$index];
+                        $destino = $ruta.$_FILES['files']['name'][$index];
+
+                        /*  Insertamos Documentos */
+                        $documento->insert_documento( $output["tick_id"],$_FILES['files']['name'][$index]);
+
+                        /*  Movemos los archivos hacia la carpeta creada */
+                        move_uploaded_file($doc1,$destino);
+                    }
+                }
+            }
+        }
+        echo json_encode($datos);
         break;
 
     case "listar_x_usu":

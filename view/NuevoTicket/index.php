@@ -61,6 +61,12 @@ require_once("../MainHeader/header.php");?>
 								</select>
 							</fieldset>
 						</div>
+						<div class="col-lg-6">
+							<fieldset class="form-group">
+								<label class="form-label semibold" for="exampleInput">Documentos Adicionales</label>
+								<input type="file" name="fileElem" id="fileElem" class="form-control" multiple>
+							</fieldset>
+						</div>
 						<div class="col-lg-12">
 							<fieldset class="form-group">
 								<label class="form-label semibold" for="tick_descrip">Descripción</label>
@@ -69,6 +75,7 @@ require_once("../MainHeader/header.php");?>
 								</div>
 							</fieldset>
 						</div>
+
 						<div class="col-lg-12">
 							<button type="submit" name="action" value="add" class="btn btn-rounded btn-inline btn-primary">Guardar</button>
 						</div>
